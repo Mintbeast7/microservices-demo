@@ -1,0 +1,26 @@
+# -------------------------------
+# Server Configuration
+# -------------------------------
+server:
+  port: 8084   # Port on which payment-service will run
+
+# -------------------------------
+# Spring Application Configuration
+# -------------------------------
+spring:
+  application:
+    name: payment-service   # Must match the config file name in config-repo
+
+  profiles:
+    active: dev   # Active environment (dev / test / prod)
+
+  config:
+    import: optional:configserver:http://config-container:8889
+    # Fetch configuration from Config Server
+    # Change port if your config server runs on different port
+
+# ------------------------------------------------------------
+# We are telling the application who it is (application name),
+# which environment it should use (profile),
+# and from where it should fetch its configuration (Config Server URL).
+# ------------------------------------------------------------
