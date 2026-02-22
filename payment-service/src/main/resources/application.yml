@@ -15,7 +15,7 @@ spring:
     active: dev   # Active environment (dev / test / prod)
 
   config:
-    import: optional:configserver:http://config-container:8889
+    import: optional:configserver:http://central-config-server-container:8889
     # Fetch configuration from Config Server
     # Change port if your config server runs on different port
 
